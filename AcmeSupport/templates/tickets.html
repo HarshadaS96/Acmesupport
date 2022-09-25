@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sign up</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+     <!--Email-->
+<div class="container mt-4 mx-auto" >
+    <div class="p-8 m-3">
+        <div class="col-lg-5 max-auto border rounded pt-4">
+            <h3 class="alert alert-light border rounded">submit a ticket</h3>
+
+           <form action="/ticket/" method="POST">
+               {% csrf_token %}
+
+                <div class="form-group">
+                  <label for="">Subject</label>
+                  <input type="text" name="subject"  class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="">Body</label>
+                  <input type="text" name="body"  class="form-control">
+                </div>
+
+                <div class="form-group">
+                 <label for="">Priority</label>
+                 <input type="text" name="priority" class="form-control" placeholder="566477336">
+               </div>
+
+                <div class="form-group">
+                  <label for="">Name</label>
+                  <input type="text" name="name"  class="form-control">
+                </div>
+
+                <div class="form-group">
+                 <label for="">Email</label>
+                 <input type="text" name="email" class="form-control" placeholder="Example@gmail.com">
+                </div>
+
+                <div class="form-group">
+                 <label for="">Phone Number</label>
+                 <input type="text" name="phone" class="form-control" placeholder="566477336">
+               </div>
+
+             <div class="form-group">
+                 <input class="btn btn-sm btn-info" type="submit" value="Submit">
+             </div>
+         </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
